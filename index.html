@@ -327,9 +327,11 @@ empHide();
 // Define function walkTheDOM(node, func)
 // This function should traverse every node in the DOM. Use recursion.
 // On each node, call func(node).
-  function walkTheDom(node, func){
-    
-  }
+function walkTheDOM(node, func){
+    for(let each in node.childNodes){
+        func(node.childNodes[each], func);
+    }
+}
   </script>
   
 </body>

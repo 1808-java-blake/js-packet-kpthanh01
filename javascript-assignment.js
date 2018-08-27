@@ -150,11 +150,16 @@
 				}
 				break;
 			case "diamond":
-				for (let i = 0; i < height; i++) {
-					let diamond = "";
-					for(let j = 0; j < height; j++){
-
+				let half = Math.floor(height/2);
+				for(let i =0; i<height; i++){
+					let temp = "";
+					for(let j=0; j<height; j++){
+						if(i==half|| j==half|| ((i<half)&&(j<half)&&(i+j>=half))|| ((i<half)&&(j>half)&&(j-i<=half))|| ((i>half)&&(j<half)&&(i-j<=half))||
+						((i>half)&&(j>half)&&((height-j-1)+(height-i-1)>=half)))
+							temp+=""+character;
+							temp+=' ';
 					}
+					console.log(temp);
 				}
 				break;
 			default:
